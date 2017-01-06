@@ -1,0 +1,25 @@
+table {
+  border: 2px solid #000;
+  text-align: center;
+  margin-left: 200px;
+}
+
+td {
+  padding: 5px;
+}
+
+
+#total, #percentage, #reset {
+  width: 150px;
+  font-size: 1.2em;
+  border: 1px solid #000;
+  border-radius: 10px;
+}
+
+.button-group {
+    margin-left: 200px;
+}
+
+button {
+  margin: 5px 5px;
+}

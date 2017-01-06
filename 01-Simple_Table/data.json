@@ -1,0 +1,43 @@
+ var jsonData = {
+  "Sahil": {
+    "Physics": 99,
+    "Chemistry": 99,
+    "Maths": 99,
+    "English": 97,
+    "CS": 100
+  },
+
+  "Gaurav": {
+    "Physics": 99,
+    "Chemistry": 99,
+    "Maths": 99,
+    "English": 97,
+    "CS": 100
+  },
+
+  "Karan": {
+    "Physics": 99,
+    "Chemistry": 99,
+    "Maths": 99,
+    "English": 97,
+    "CS": 100
+  },
+
+  "DAP": {
+    "Physics": 99,
+    "Chemistry": 99,
+    "Maths": 99,
+    "English": 97,
+    "CS": 100
+  },
+
+  "Komal": {
+    "Physics": 99,
+    "Chemistry": 99,
+    "Maths": 99,
+    "English": 97,
+    "CS": 100
+  }
+}
+
+module.exports = jsonData;
