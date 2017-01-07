@@ -10,7 +10,7 @@
 
 (function () {
   var TOTAL_SCORE = 500
-  var headers = ['SCORE', 'PHYSICS', 'CHEMISTRY', 'MATHS', 'EMGLISH', 'COMP-SC' ]
+  var headers = ['', 'Physics', 'Chemistry', 'Maths', 'English', 'Comp-Sc' ]
   var totalSumArray = []
 
   var tableData = {
@@ -96,7 +96,6 @@
     }
     headers.push('TOTAL')
     createNewTable()
-    // Enable clickPercentage here!
   }
 
   percentageButton.onclick = function () {
