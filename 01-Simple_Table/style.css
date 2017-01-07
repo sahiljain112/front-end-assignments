@@ -19,11 +19,25 @@ header {
    font-size: 1.2em;
  }
 
+ #table-heading, #tr-head {
+   font-size: 1.2em;
+   padding: 5px;
+ }
+
+ #table-wrapper {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+ }
+
+ table, td {
+    border: 1px solid black;
+}
 table {
   border: 2px solid #000;
   text-align: center;
-  margin-left: 200px;
   margin-top: 20px;
+  border-collapse: collapse;
 }
 
 td {
@@ -39,9 +53,9 @@ td {
 }
 
 .button-group {
-    margin-left: 200px;
+    text-align: center;
 }
 
 button {
-  margin: 5px 5px;
+  margin: 5px;
 }

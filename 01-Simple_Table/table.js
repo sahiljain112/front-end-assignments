@@ -127,6 +127,7 @@
     var rows = scoreTable.rows.length
 
     var trHead = document.createElement('tr')
+    trHead.id = 'tr-head'
     headers.forEach(function (heading) {
       var tdHead = document.createElement('td')
       tdHead.innerText = heading
@@ -137,7 +138,9 @@
 
     Object.keys(tableData).forEach(function (key) {
       var tr = document.createElement('tr')
+
       var name = document.createElement('td')
+      name.id = 'table-heading'
       name.innerText = key
       var nameObject = tableData[key]
       tr.append(name)
