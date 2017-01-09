@@ -20,12 +20,55 @@ header {
  }
 
  #table-wrapper {
-   display: flex;
+   margin: 0px 20px;
    align-items: center;
    justify-content: center;
  }
 
-footer, footer a{
+ #roomDetails:hover {
+
+ }
+
+ #roomDetails {
+   padding: 0 20px;
+   border-radius: 5px;
+   border: 1px solid #000
+ }
+
+ #sortByPrice:hover, #sortByType:hover, #reset:hover {
+   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.2);
+ }
+
+ #sortByPrice, #sortByType, #reset {
+   width: 150px;
+   font-size: 1.2em;
+   border: 1px solid #000;
+   border-radius: 10px;
+   color: white;
+   background-color: #294D24;
+ }
+
+ #reset {
+   border: 2px solid #294D24;
+   background-color: white;
+   color: #294D24;
+ }
+
+ #sortByType:disabled, #sortByPrice:disabled {
+     opacity: 0.2;
+     cursor: not-allowed;
+     box-shadow: none;
+ }
+
+ .button-group {
+     text-align: center;
+ }
+
+ button {
+   margin: 5px;
+ }
+
+footer, footer a {
   display: flex;
   position: fixed;
   bottom: 0px;
