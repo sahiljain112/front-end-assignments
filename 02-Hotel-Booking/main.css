@@ -1,3 +1,12 @@
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+  padding-bottom: 4rem;
+  position: relative;
+  background-color: #f2f2f2;
+}
 
 header {
    display: flex;
@@ -70,9 +79,7 @@ header {
 
 footer, footer a {
   display: flex;
-  position: fixed;
-  bottom: 0px;
-  padding: 0px;
+  position: relative;
   background-color: #294D24;
   width: 100%;
   align-items: center;
@@ -83,4 +90,15 @@ footer, footer a {
   color: #fff;
   font-family: sans-serif;
   font-size: 16px;
+}
+
+footer-wrapper {
+  position: relative;
+}
+
+footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
