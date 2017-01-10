@@ -7,13 +7,13 @@
 
 (function () {
   console.log('Inside booking options JS')
-
+  let totalPrice = 0, totalRooms = 0, discount = '10'
   var optionsData = [
     {
       'name': 'Adjoining Room',
       'description': 'A single room and a double room which share a common boundary',
       'price': 5000,
-      'type': 'Suite',
+      'type': 'Adjoining',
       'roomsBooked': 0
     },
 
@@ -75,11 +75,38 @@
     parent.removeChild(previousRoomDetails)
   }
 
+  const checkoutButton = document.getElementById('checkout')
+  console.log('checkout is ', checkout)
+
+  checkoutButton.onclick = () => {
+  //  alert('Hurray')
+    totalPrice = totalRooms = 0
+    const roomDetailsList = document.getElementsByClassName('roomDetails')
+    optionsData.forEach((option) => {
+      //console.log(document.getElementById(`${option.type}`))
+      const roomsPerOption = parseInt(document.getElementById(`${option.type}`).value || 0, 10)
+      console.log('Rooms per option', roomsPerOption)
+      totalRooms = totalRooms + roomsPerOption
+      totalPrice += (option.price * roomsPerOption)
+    })
+      console.log('Total price and rooms', totalPrice, totalRooms)
+      console.log('Yp',document.getElementsByClassName('calculation__rooms'))
+      document.getElementsByClassName('calculation__rooms')[0].innerHTML = totalRooms
+      document.getElementsByClassName('calculation__price')[0].innerHTML = ` &#8377 ${totalPrice} /-`
+      discountedPrice()
+  }
+
+  const discountedPrice = () => {
+    const discountedPrice = totalPrice - (((discount) * totalPrice)/100).toFixed(2)
+    document.getElementsByClassName('calculation__discount')[0].innerHTML = `${discount}%`
+    document.getElementsByClassName('calculation__net')[0].innerHTML = ` &#8377 ${discountedPrice} /-`
+  }
+
   const renderIndividualRoom = (option, newRooms) => {
     console.log('Rendering individual row')
     console.log(option)
     const roomDetails = document.createElement('div')
-    roomDetails.id = 'roomDetails'
+    roomDetails.className = 'roomDetails'
 
     const roomPicture = document.createElement('img')
     roomPicture.src = 'sprinklr.png'
