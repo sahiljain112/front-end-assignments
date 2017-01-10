@@ -34,30 +34,14 @@ header {
    justify-content: center;
  }
 
- #roomDetails:hover {
-
- }
-
- #roomDetails {
-   padding: 0 20px;
-   border-radius: 5px;
-   border: 1px solid #000
- }
-
  #sortByPrice:hover, #sortByType:hover, #reset:hover {
    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.2);
  }
 
  #sortByPrice, #sortByType, #reset {
-   width: 150px;
+   width: 100px;
    font-size: 1.2em;
-   border: 1px solid #000;
    border-radius: 10px;
-   color: white;
-   background-color: #294D24;
- }
-
- #reset {
    border: 2px solid #294D24;
    background-color: white;
    color: #294D24;
@@ -69,9 +53,66 @@ header {
      box-shadow: none;
  }
 
- .button-group {
-     text-align: center;
+ #roomDetails:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.2);
  }
+
+ #roomDetails {
+   display: flex;
+   padding: 5px 20px;
+   border-radius: 5px;
+   border: 1px solid #000;
+   margin: 10px;
+ }
+
+ #roomGroup {
+   padding: 20px;
+ }
+
+ #roomTitle {
+   padding: 0px 20px;
+   font-size: 24px;
+   font-family: 'Montserrat',sans-serif;
+   margin-bottom: 20px;
+ }
+
+ #roomDescription, #roomPrice {
+   padding: 0px 20px;
+   font-size: 16px;
+   font-family: 'Roboto',sans-serif;
+   margin-bottom: 10px;
+ }
+
+
+  #roomCount {
+    font-size: 16px;
+    font-family: 'Montserrat',sans-serif;
+    text-align: right;
+  }
+
+.hotel-header {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.hotel-name{
+  font-size: 32px;
+  padding-left: 20px;
+  font-family: 'Montserrat',sans-serif;
+}
+
+img {
+  width: 150px;
+  height: 150px;
+}
+
+.button-group {
+  text-align: right;
+  margin-right: 10px;
+  flex-grow: 1;
+}
 
  button {
    margin: 5px;

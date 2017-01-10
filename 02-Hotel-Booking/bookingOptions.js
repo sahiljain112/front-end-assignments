@@ -49,35 +49,44 @@
       'Arguments', arg0, arg1
     )
   //  return arg0.price - arg1.price
-  return arg0[filter].attr - arg1[filter].attr
+  return arg0[filter] - arg1[filter]
   }
 
   const sortByPrice = document.getElementById('sortByPrice')
   const sortByType = document.getElementById('sortByType')
 
   sortByPrice.onclick = () => {
-    alert('sort by price clicked')
     optionsData.sort(genericSortingFunction.bind(null, 'price'))
     console.log('Options sorted by Price', optionsData)
+    renderRoomDetails()
   }
 
   sortByType.onclick = () => {
-    alert('sort by room clicked')
-    optionsData.sort(genericSortingFunction.bind(null,'type'))
-    console.log('Options sorted by type ',optionsData)
+    optionsData.sort(genericSortingFunction.bind(null, 'type'))
+    console.log('Options sorted by type ', optionsData)
+    renderRoomDetails()
   }
 
-  const renderContent = (option) => {
-    console.log('Rendering individual row')
+  const replaceContent = (newRoomDetails) => {
+    var previousRoomDetails = document.getElementById('rooms')
+    var parent = previousRoomDetails.parentNode
 
+    parent.insertBefore(newRoomDetails, previousRoomDetails)
+    parent.removeChild(previousRoomDetails)
+  }
+
+  const renderIndividualRoom = (option, newRooms) => {
+    console.log('Rendering individual row')
     console.log(option)
-    const tableWrapper = document.getElementById('table-wrapper')
     const roomDetails = document.createElement('div')
     roomDetails.id = 'roomDetails'
 
     const roomPicture = document.createElement('img')
-  //  roomPicture.src = './myImage'
+    roomPicture.src = 'sprinklr.png'
     roomPicture.alt = option.name
+
+    const roomGroup = document.createElement('div')
+    roomGroup.id = 'roomGroup'
 
     const roomTitle = document.createElement('div')
     roomTitle.id = 'roomTitle'
@@ -89,21 +98,30 @@
 
     const roomPrice = document.createElement('div')
     roomPrice.id = 'roomPrice'
-    roomPrice.innerHTML = option.price
+    roomPrice.innerHTML = `&#8377 ${option.price} /-`
+
+    roomGroup.append(roomTitle)
+    roomGroup.append(roomDescription)
+    roomGroup.append(roomPrice)
+
+    const roomCount = document.createElement('input')
+    roomCount.id = 'roomCount'
 
     roomDetails.append(roomPicture)
-    roomDetails.append(roomTitle)
-    roomDetails.append(roomDescription)
-    roomDetails.append(roomPrice)
-
-    tableWrapper.append(roomDetails)
-    tableWrapper.append(document.createElement('br'))
+    roomDetails.append(roomGroup)
+    roomDetails.append(document.createElement('br'))
+    newRooms.append(roomDetails)
   }
 
-  //Rendering the data here
+  // Rendering the data here
+  const renderRoomDetails = () => {
+    let newRooms = document.createElement('div')
+    newRooms.id = 'rooms'
 
-  optionsData.forEach((option) => {
-    renderContent(option)
-  })
-
+    optionsData.forEach((option) => {
+      renderIndividualRoom(option, newRooms)
+    })
+    replaceContent(newRooms)
+  }
+  renderRoomDetails()
 })()

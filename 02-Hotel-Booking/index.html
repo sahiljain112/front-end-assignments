@@ -7,6 +7,8 @@
     <title> Hotel Booking Example</title>
     <link rel="stylesheet" href="main.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
 
 </head>
 
@@ -16,18 +18,24 @@
     <h3 id="content-heading">Hotel Booking</h3>
   </header>
 
-  <div id = "table-wrapper">
+  <div class="hotel-header">
+    <div class="hotel-name">
+      Tanzanite Hotel
+    </div>
+      <div class="button-group">
+        <button type="button" id="sortByPrice"> Price </button>
+        <button type="button" id="sortByType"> Type </button>
+      </div>
   </div>
 
- <div class="button-group">
-   <button type="button" id="sortByPrice"> Price </button>
-   <button type="button" id="sortByType"> Type </button>
-   <button type="button" id="reset"> Reset </button>
- </div>
+  <hr/>
+  <div id = "table-wrapper">
+    <div id="rooms"></div>
+  </div>
 
  <div class="footer-wrapper">
   <footer>
-    <a href="https://github.com/sahiljain112/front-end-assignments" target="_blank">@sahiljain112 </a>
+    <a href="https://github.com/sahiljain112/front-end-assignments" target="_blank">@sahiljain112</a>
   </footer>
 </div>
 
