@@ -44,7 +44,7 @@
 
   console.log('Initial data', optionsData)
 
-  var genericSortingFunction = (filter,arg0, arg1) => {
+  var genericSortingFunction = (filter, arg0, arg1) => {
     console.log(
       'Arguments', arg0, arg1
     )
@@ -104,11 +104,35 @@
     roomGroup.append(roomDescription)
     roomGroup.append(roomPrice)
 
-    const roomCount = document.createElement('input')
-    roomCount.id = 'roomCount'
+    const roomCountWrapper = document.createElement('div')
+    roomCountWrapper.id = 'roomCountWrapper'
+    // const upVote = document.createElement('button')
+    // const downVote = document.createElement('button')
+    //
+    // upVote.id = 'upVote'
+    // downVote.id = 'downVote'
+    //
+    // const upVoteIcon = document.createElement('span')
+    // upVoteIcon.className = 'glyphicon glyphicon-chevron-up'
+    //
+    // const downVoteIcon = document.createElement('span')
+    // downVoteIcon.className = 'glyphicon glyphicon-chevron-down'
+    //
+    // upVote.append(upVoteIcon)
+    // downVote.append(downVoteIcon)
+
+    const roomCountInput = document.createElement('input')
+    roomCountInput.id = `${option.type}`
+
+    const roomCount = document.createElement('h4')
+    roomCount.innerHTML = 'Book rooms now!'
+
+    roomCountWrapper.append(roomCount)
+    roomCountWrapper.append(roomCountInput)
 
     roomDetails.append(roomPicture)
     roomDetails.append(roomGroup)
+    roomDetails.append(roomCountWrapper)
     roomDetails.append(document.createElement('br'))
     newRooms.append(roomDetails)
   }

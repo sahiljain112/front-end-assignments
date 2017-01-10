@@ -59,6 +59,7 @@ header {
 
  #roomDetails {
    display: flex;
+   width: 100%;
    padding: 5px 20px;
    border-radius: 5px;
    border: 1px solid #000;
@@ -83,11 +84,20 @@ header {
    margin-bottom: 10px;
  }
 
+  #roomCountWrapper {
 
-  #roomCount {
+    height: 100%;
+    text-align: center;
+  }
+
+  input {
     font-size: 16px;
     font-family: 'Montserrat',sans-serif;
-    text-align: right;
+    text-align: center;
+    border: 1px solid #000;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
   }
 
 .hotel-header {
@@ -97,16 +107,22 @@ header {
   margin-top: 20px;
 }
 
-.hotel-name{
+.hotel-name {
   font-size: 32px;
   padding-left: 20px;
-  font-family: 'Montserrat',sans-serif;
+  font-family: 'Roboto',sans-serif;
+}
+
+h4 {
+  font-size: 16px;
+  font-family: 'Roboto',sans-serif;
 }
 
 img {
   width: 150px;
   height: 150px;
 }
+
 
 .button-group {
   text-align: right;
@@ -131,6 +147,13 @@ footer, footer a {
   color: #fff;
   font-family: sans-serif;
   font-size: 16px;
+}
+
+.calculation h4 {
+  padding-left: 10px;
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  text-align: left;
 }
 
 footer-wrapper {
